@@ -1,0 +1,12 @@
+# Claude Code : état local, non partagé
+.claude/.reviewed
+.claude/settings.local.json
+
+# Divers
+.DS_Store
+node_modules/
+__pycache__/
+.pytest_cache/
+.venv/
+dist/
+coverage/
