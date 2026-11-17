@@ -7,14 +7,14 @@
     {
       "name": "core",
       "source": "./core",
-      "description": "Noyau à installer partout : grill-with-docs (+ grilling, domain-modeling), sous-agent relecteur et hook qui exige tests verts + revue avant la fin d'un tour.",
+      "description": "Core plugin to install everywhere: an engineering workflow (grill-with-docs, to-spec, to-tickets, implement, code-review, retro, tdd and their dependencies), a relecteur code-review sub-agent, and an end-of-turn hook that checks tests and review.",
       "category": "core",
-      "tags": ["workflow", "review", "planning"]
+      "tags": ["workflow", "planning", "tdd", "review"]
     },
     {
       "name": "find-skills",
       "source": "./bank/generic/find-skills",
-      "description": "Aide à découvrir et installer des skills (npx skills find). Source : vercel-labs/skills, MIT.",
+      "description": "Helps discover and install agent skills (npx skills find). Source: vercel-labs/skills, MIT.",
       "category": "generic",
       "tags": ["discovery", "skills"]
     }

@@ -1,4 +1,4 @@
 {
   "name": "core",
-  "description": "Noyau : grill-with-docs, grilling, domain-modeling (Matt Pocock, MIT), sous-agent relecteur et hook de contrôle (tests + revue)."
+  "description": "Engineering workflow (grill-with-docs, to-spec, to-tickets, implement, code-review, retro, tdd and dependencies, from Matt Pocock, MIT), a relecteur code-review sub-agent and an end-of-turn hook that checks tests and review."
 }
