@@ -1,0 +1,4 @@
+# Les scripts shell doivent rester en LF, même sur Windows, sinon bash plante.
+* text=auto
+*.sh text eol=lf
+.claude/test-command text eol=lf
