@@ -1,29 +1,24 @@
 # CLAUDE.md
 
-> À remplir pour chaque projet. Supprime les lignes d'aide (`>`) une fois fait.
+Ce dépôt est une **marketplace de plugins Claude Code** : un noyau (`core/`) et une banque de skills (`bank/`). Voir le README pour l'usage.
 
-## Projet
+## Structure
 
-> Une ou deux phrases : ce que fait le projet, pour qui.
-
-## Commandes
-
-> Les commandes dont Claude a besoin. La commande de test doit aussi être dans `.claude/test-command` (via `bash scripts/init.sh`).
-
-- Installer : `...`
-- Lancer : `...`
-- Tester : `...`
-- Lint / format : `...`
+- `.claude-plugin/marketplace.json` : liste des plugins installables. Tout plugin ajouté doit y figurer.
+- `core/` : plugin « noyau » (skills, sous-agent `relecteur`, hook `Stop` `hooks/gates.sh`).
+- `bank/<catégorie>/<skill>/` : un plugin par skill (`.claude-plugin/plugin.json` + `skills/<skill>/SKILL.md`). Gabarit : `bank/_template/`.
+- `user-config/` : réglages personnels à coller à la main dans `~/.claude/` (un plugin ne peut pas les embarquer).
+- `.claude/settings.json` : réglages de ce dépôt seulement (permissions + hook qui pointe vers `core/hooks/gates.sh`).
 
 ## Conventions
 
-> Ce qui n'est pas évident en lisant le code : style, nommage, structure, pièges connus.
+- Pas de champ `version` dans les `plugin.json` : les mises à jour suivent le dernier commit.
+- Le nom d'un skill est en minuscules-avec-tirets et unique dans toute la banque ; sa `description` tient sur une ligne.
+- Skills tiers : copiés tels quels (sauf modification signalée dans le fichier), avec leur licence dans le dossier du plugin et une ligne dans la section Crédits du README.
+- `core/hooks/gates.sh` (`fingerprint`) et la commande de `core/agents/relecteur.md` calculent la même empreinte : toute modification de l'une impose de modifier l'autre.
 
-- ...
+## Règles de travail
 
-## Règles de travail (fournies par le template)
-
-- Avant de terminer une tâche qui modifie du code, invoque le sous-agent `relecteur`. Un hook bloque la fin du tour si les tests échouent ou si la revue manque.
-- **Jamais de push sur `main`/`master`, jamais de merge de PR.** Travaille sur une branche, pousse-la, ouvre une pull request (`gh pr create`, sinon donne le lien de comparaison GitHub). L'utilisateur relit la PR et le code, puis merge lui-même.
-- `git push` demande toujours confirmation.
-- Les skills génériques sont dans `.claude/skills/`. Les autres sont dans `bank/` : ne les charge pas, propose-les à l'utilisateur (`bash scripts/list-skills.sh`, puis `bash scripts/add-skill.sh <skill>`).
+- Jamais de push sur `main`, jamais de merge de PR : branche, push, pull request ; l'utilisateur relit et merge.
+- Avant de terminer une tâche qui modifie du code, invoque le sous-agent `relecteur`. Le hook bloque la fin du tour si les tests échouent ou si la revue manque.
+- Les scripts `.sh` doivent rester en LF (`.gitattributes`).

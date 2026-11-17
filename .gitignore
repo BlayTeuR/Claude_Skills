@@ -1,6 +1,7 @@
-# Claude Code : état local, non partagé
-.claude/.reviewed
+# Claude Code : état et copies locales, non partagés
 .claude/settings.local.json
+.claude/skills/
+.claude/.reviewed
 
 # Divers
 .DS_Store

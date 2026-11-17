@@ -1,0 +1,22 @@
+{
+  "name": "claude-skills",
+  "owner": {
+    "name": "BlayTeuR"
+  },
+  "plugins": [
+    {
+      "name": "core",
+      "source": "./core",
+      "description": "Noyau à installer partout : grill-with-docs (+ grilling, domain-modeling), sous-agent relecteur et hook qui exige tests verts + revue avant la fin d'un tour.",
+      "category": "core",
+      "tags": ["workflow", "review", "planning"]
+    },
+    {
+      "name": "find-skills",
+      "source": "./bank/generic/find-skills",
+      "description": "Aide à découvrir et installer des skills (npx skills find). Source : vercel-labs/skills, MIT.",
+      "category": "generic",
+      "tags": ["discovery", "skills"]
+    }
+  ]
+}
