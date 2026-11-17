@@ -1,4 +1,4 @@
 {
   "name": "find-skills",
-  "description": "Aide à découvrir et installer des skills (npx skills find). Source : vercel-labs/skills, MIT."
+  "description": "Helps discover and install agent skills (npx skills find). Source: vercel-labs/skills, MIT."
 }
